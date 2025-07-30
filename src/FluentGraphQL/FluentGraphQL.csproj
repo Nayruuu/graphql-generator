@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>FluentGraphQL</PackageId>
+		<Version>1.0.1</Version>
+		<Authors>Nayruu</Authors>
+		<Description>A simple and fluent GraphQL query builder for .NET</Description>
+		<PackageTags>GraphQL Builder Fluent .NET</PackageTags>
+		<RepositoryUrl>https://github.com/Nayruuu/graphql-generator</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Nayruuu/graphql-generator</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RootNamespace>FluentGraphQL</RootNamespace>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+</Project>

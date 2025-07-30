@@ -1,0 +1,7 @@
+.DS_STORE
+**/bin
+**/obj
+**/.idea
+**/*.dll
+**/*.pdb
+**/*.DotSettings.user
