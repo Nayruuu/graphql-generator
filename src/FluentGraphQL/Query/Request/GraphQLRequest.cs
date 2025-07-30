@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json.Linq;
+using System.Text.Json.Nodes;
 
 namespace FluentGraphQL
 {
@@ -7,7 +7,7 @@ namespace FluentGraphQL
     {
         public string Query { get; set; }
 
-        public JObject Variables { get; set; }
+        public JsonObject Variables { get; set; }
 
         public GraphQLRequest()
         {
@@ -23,7 +23,7 @@ namespace FluentGraphQL
             this.Query = query;
         }
 
-        public GraphQLRequest(string query, JObject variables) : this(query)
+        public GraphQLRequest(string query, JsonObject variables) : this(query)
         {
             this.Variables = variables;
         }

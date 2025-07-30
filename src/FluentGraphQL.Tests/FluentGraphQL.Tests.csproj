@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluentGraphQL\FluentGraphQL.csproj" />
+    <ProjectReference Include="..\FluentQL.Classes\FluentQL.Classes.csproj" />
   </ItemGroup>
 
 </Project>

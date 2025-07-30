@@ -2,13 +2,23 @@
 
 **FluentGraphQL** is a lightweight, fluent C# library for dynamically building GraphQL queries. It allows developers to construct queries using a clean, chainable syntax—perfect for strongly typed scenarios or custom query generation needs.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/FluentGraphQL.svg)](https://www.nuget.org/packages/FluentGraphQL)
+
 ## ✨ Features
 
 - ✅ Fluent API to build queries and mutations
 - ✅ Nested field selection with arguments and aliases
 - ✅ Inline fragments and directives support (coming soon)
 - ✅ Easy integration in .NET applications
-- ✅ Lightweight and dependency-free (except Newtonsoft.Json)
+- ✅ Lightweight and dependency-free (except System.Text.Json)
+- ✅ Built-in performance benchmarks — [see results](src/FluentGraphQL/BenchmarkDotNet.Artifacts/results/FluentQL.Benchmark.Benchmarks.GraphQLBuilderBenchmark-report-github.md)
+
+## 🤝 Comparison
+
+There is already a great alternative available: [`graphql-query-builder-dotnet`](https://github.com/charlesdevandiere/graphql-query-builder-dotnet) by Charles Devandiere. This project is not meant to discredit or replace it.
+
+**FluentGraphQL** simply explores a different architectural approach, with a focus on fluent chaining, dynamic nested field construction, and performance fine-tuning. It was born independently and out of curiosity and learning, not competition.
 
 ## 📦 Installation
 
@@ -24,39 +34,27 @@ dotnet add package FluentGraphQL
 public class Account
 {
     public Guid Id { get; set; }
-
     public string SocietyName { get; set; }
-
     public Adresse Adresse { get; set; }
-
     public IEnumerable<Contact> Contacts { get; set; }
 }
 
 public class Contact
 {
     public Guid Id { get; set; }
-
     public string FirstName { get; set; }
-
     public string LastName { get; set; }
-
     public string Email { get; set; }
-
     public string PhoneNumber { get; set; }
-
     public IEnumerable<Task> Tasks { get; set; }
 }
 
 public class Task
 {
     public int Id { get; set; }
-
     public string Name { get; set; }
-
     public string Description { get; set; }
-
     public DateTime StartDate { get; set; }
-
     public DateTime? DueDate { get; set; }
 }
 ```
@@ -141,7 +139,6 @@ query ($firstName: String!, $cities: [String]!) {
     }
   }
 }
-
 ```
 
 ## 🧪 Testing

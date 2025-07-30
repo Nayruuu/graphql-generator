@@ -4,12 +4,8 @@ using System.Reflection;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 
-using Newtonsoft.Json;
-
 namespace FluentGraphQL
 {
-
-
     public abstract class GraphQLQueryObject : GraphQLObject
     {
         public Dictionary<string, GraphQLQueryObjectField> Fields { get; protected set; }
@@ -71,9 +67,9 @@ namespace FluentGraphQL
             string aliasName = null) where TProperty : class
         {
             MemberExpression memberExpression = propertySelector.Body as MemberExpression;
-            GraphQLQueryObjectField field =
-                complexPropertySelector.Invoke(
-                    new GraphQLQueryObjectField<TProperty>(memberExpression.Member.Name, aliasName));
+            GraphQLQueryObjectField field = complexPropertySelector(new GraphQLQueryObjectField<TProperty>(
+                memberExpression.Member.Name, 
+                aliasName));
 
             this.Fields[field.GetPrincipalKey()] = field;
 
@@ -86,16 +82,16 @@ namespace FluentGraphQL
             string aliasName = null) where TProperty : class
         {
             MemberExpression memberExpression = propertySelector.Body as MemberExpression;
-            GraphQLQueryObjectField field =
-                complexPropertySelector.Invoke(
-                    new GraphQLQueryObjectField<TProperty>(memberExpression.Member.Name, aliasName));
+            GraphQLQueryObjectField field = complexPropertySelector(new GraphQLQueryObjectField<TProperty>(
+                memberExpression.Member.Name, 
+                aliasName));
 
             this.Fields[field.GetPrincipalKey()] = field;
 
             return this;
         }
 
-        public GraphQLQueryObject<T> AddEveryFields(bool useJsonProperty = false)
+        public GraphQLQueryObject<T> AddEveryFields()
         {
             var properties = typeof(T)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -103,17 +99,7 @@ namespace FluentGraphQL
 
             foreach (var property in properties)
             {
-                if (useJsonProperty == true)
-                {
-                    var jsonPropertyAttribute = property.GetCustomAttribute<JsonPropertyAttribute>();
-
-                    this.Fields[property.Name] =
-                        new GraphQLQueryObjectField(property.Name, jsonPropertyAttribute.PropertyName);
-                }
-                else
-                {
-                    this.Fields[property.Name] = new GraphQLQueryObjectField(property.Name, null);
-                }
+                this.Fields[property.Name] = new GraphQLQueryObjectField(property.Name, null);
             }
 
             return this;
@@ -125,9 +111,9 @@ namespace FluentGraphQL
             string aliasName = null) where TProperty : class
         {
             MemberExpression memberExpression = propertySelector.Body as MemberExpression;
-            GraphQLQueryObjectField field =
-                complexPropertySelector.Invoke(
-                    new GraphQLQueryObjectField<TProperty>(memberExpression.Member.Name, aliasName));
+            GraphQLQueryObjectField field = complexPropertySelector(new GraphQLQueryObjectField<TProperty>(
+                memberExpression.Member.Name, 
+                aliasName));
 
             this.Fields[field.GetPrincipalKey()] = field;
 

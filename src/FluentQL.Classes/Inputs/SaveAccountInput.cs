@@ -1,4 +1,4 @@
-namespace FluentGraphQL.Tests.TestClasses.Inputs;
+namespace FluentGraphQL.Classes.Inputs;
 
 public class SaveAccountInput
 {

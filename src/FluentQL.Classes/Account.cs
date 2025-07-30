@@ -1,6 +1,6 @@
-using FluentGraphQL.Tests.TestClasses.ValueObjects;
+using FluentGraphQL.Classes.ValueObjects;
 
-namespace FluentGraphQL.Tests.TestClasses;
+namespace FluentGraphQL.Classes;
 
 public class Account
 {

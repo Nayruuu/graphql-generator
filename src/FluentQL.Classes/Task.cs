@@ -1,4 +1,4 @@
-namespace FluentGraphQL.Tests.TestClasses;
+namespace FluentGraphQL.Classes;
 
 public class Task
 {

@@ -5,13 +5,8 @@ namespace FluentGraphQL
 {
     public abstract class GraphQlBuilder
     {
-        protected readonly StringBuilder Builder = new StringBuilder();
+        protected readonly StringBuilder Builder = new();
 
-        protected readonly Dictionary<string, GraphQLParameter> Parameters = new Dictionary<string, GraphQLParameter>();
-
-        protected string GetTabulation(int tabCount)
-        {
-            return new string('\t', tabCount);
-        }
+        protected readonly Dictionary<string, GraphQLParameter> Parameters = new();
     }
 }

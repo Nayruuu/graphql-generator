@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 
-using FluentGraphQL.Tests.TestClasses;
-using FluentGraphQL.Tests.TestClasses.Inputs;
+using FluentGraphQL.Classes;
+using FluentGraphQL.Classes.Inputs;
 
 namespace FluentGraphQL.Tests;
 
@@ -300,7 +300,7 @@ public class Tests
                 }));
         
         Assert.Equal(
-            "query ($firstName: String!, $cities: [String]!) { accounts(where: { and: [ { city: { in: $cities } },{ contacts: { firstName: { eq: $firstName } } } ] }) { id societyName } }",
+            "query ($firstName: String!, $cities: [String]!) { accounts(where: { and: [ { city: { in: $cities } }, { contacts: { firstName: { eq: $firstName } } } ] }) { id societyName } }",
             Normalize(builder.Query));
     }
     

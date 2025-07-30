@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageId>FluentGraphQL</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Nayruu</Authors>
 		<Description>A simple and fluent GraphQL query builder for .NET</Description>
 		<PackageTags>GraphQL Builder Fluent .NET</PackageTags>
@@ -12,14 +12,14 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RootNamespace>FluentGraphQL</RootNamespace>
 		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>9</LangVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="System.Text.Json" Version="9.0.7" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
-
 </Project>

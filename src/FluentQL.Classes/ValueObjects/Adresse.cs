@@ -1,4 +1,4 @@
-namespace FluentGraphQL.Tests.TestClasses.ValueObjects;
+namespace FluentGraphQL.Classes.ValueObjects;
 
 public class Adresse
 {
